@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRUD de Alunos | Éverton Viana</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div>
+      <span class="tag">OAT1 • DESENVOLVIMENTO DE APIs</span>
+      <h1>CRUD de Alunos</h1>
+      <p>Sistema de cadastro utilizando Array</p>
+    </div>
+    <div class="aluno-header">
+      <strong>Éverton Viana</strong>
+      <span>Sistemas de Informação</span>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="info">
+    <div><strong>Aluno</strong><span>Éverton Viana</span></div>
+    <div><strong>Disciplina</strong><span>Desenvolvimento de APIs</span></div>
+    <div><strong>Professor</strong><span>Pedro Borges</span></div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <div class="card-title">
+        <span class="icone">+</span>
+        <div>
+          <h2 id="titulo">Novo aluno</h2>
+          <p>Preencha os dados abaixo</p>
+        </div>
+      </div>
+
+      <form id="form">
+        <input type="hidden" id="id">
+
+        <label>Nome completo</label>
+        <input id="nome" type="text" placeholder="Ex.: João Silva" required>
+
+        <label>Curso</label>
+        <input id="curso" type="text" value="Sistemas de Informação" required>
+
+        <label>Idade</label>
+        <input id="idade" type="number" min="1" max="120" placeholder="Ex.: 21" required>
+
+        <div class="buttons">
+          <button type="submit" id="salvar">Cadastrar aluno</button>
+          <button type="button" id="cancelar" class="cancelar" onclick="cancelar()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card">
+      <div class="table-head">
+        <div>
+          <h2>Alunos cadastrados</h2>
+          <p id="contador">0 alunos</p>
+        </div>
+        <input id="pesquisa" type="search" placeholder="Pesquisar..." oninput="renderizar()">
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Curso</th>
+              <th>Idade</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="lista"></tbody>
+        </table>
+      </div>
+
+      <div id="vazio" class="vazio">Nenhum aluno cadastrado.</div>
+    </div>
+  </section>
+
+  <section class="crud-info">
+    <div><b>C</b><span>Create<br><small>Cadastrar</small></span></div>
+    <div><b>R</b><span>Read<br><small>Consultar</small></span></div>
+    <div><b>U</b><span>Update<br><small>Atualizar</small></span></div>
+    <div><b>D</b><span>Delete<br><small>Excluir</small></span></div>
+  </section>
+</main>
+
+<footer>
+  <p>OAT1 - Projeto CRUD com Arrays • Éverton Viana • Sistemas de Informação</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
